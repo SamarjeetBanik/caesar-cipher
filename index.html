@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1 class="display-3">Caesar Cipher</h1></center>
+    <div class="container">
+        <div class="col">
+            <div class="row-6 py-2 bg-dark text-white">
+                <center>
+                    <h1>Encryption</h1>
+                    Plain Text<br>
+                    <textarea id="plainText" class="mb-2"></textarea>
+                    <br>
+                    Shift Key<br>
+                    <input type="number" min='1' max='26' id="key"/>
+                    <br>
+                    <button class="btn btn-primary my-4" type="button" onclick="encrypt()">Encrypt</button>
+                    <br>
+                    Cipher Text<br>
+                    <textarea id="cipherText"></textarea>
+                </center>
+            </div>
+            <div class="row-6 my-3 py-2 bg-dark text-white">
+                <center>
+                    <h1>Decryption</h1>
+                    Cipher Text<br>
+                    <textarea id="textCipher" class="mb-2"></textarea>
+                    <br>
+                    Shift Key<br>
+                    <input type="number" min='1' max='26' id="dkey"/>
+                    <br>
+                    <button class="btn btn-primary my-4" type="button" onclick="decrypt()">Decrypt</button>
+                    <br>
+                    Plain Text<br>
+                    <textarea id="textPlain"></textarea>
+                </center>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-success py-2">
+        <center style="color: black;">
+            <h4>&copy; <a style="color: darkslateblue;" href="https://github.com/SamarjeetBanik">Samarjeet Banik</a> | 2021</h4>
+        </center>
+    </footer>
+    <script src="cipherFunc.js"></script>
+</body>
+</html>
