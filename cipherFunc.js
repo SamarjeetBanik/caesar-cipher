@@ -1,4 +1,4 @@
-function encrypt() {
+var encrypt = () => {
     var pt = document.getElementById("plainText").value
     var skey = parseInt(document.getElementById("key").value)
     var output = ''
@@ -15,7 +15,7 @@ function encrypt() {
     document.getElementById("cipherText").innerHTML = output;
 }
 
-function decrypt() {
+var decrypt = () => {
     var ct = document.getElementById("textCipher").value
     var skey = parseInt(document.getElementById("dkey").value)
     var output = ''
