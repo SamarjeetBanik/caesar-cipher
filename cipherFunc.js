@@ -31,3 +31,20 @@ var decrypt = () => {
     }
     document.getElementById("textPlain").innerHTML = output;
 }
+
+var input1 = document.getElementById("key")
+var input2 = document.getElementById("dkey")
+
+input1.addEventListener("keyup", (event) => {
+    if(event.keyCode === 13) {
+        event.preventDefault()
+        document.getElementById("ebtn").click()
+    }
+})
+
+input2.addEventListener("keyup", (event) => {
+    if(event.keyCode === 13) {
+        event.preventDefault()
+        document.getElementById("dbtn").click()
+    }
+})
