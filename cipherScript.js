@@ -17,19 +17,26 @@ var encrypt = () => {
 
 var decrypt = () => {
     var ct = document.getElementById("textCipher").value
-    var skey = parseInt(document.getElementById("dkey").value)
-    var output = ''
+    var dkey = parseInt(document.getElementById("dkey").value)
+    var doutput = ''
     
     for(let i = 0; i < ct.length; i++) 
     {
-        if(ct[i] === ct[i].toUpperCase()) {
-            output += String.fromCharCode((ct.charCodeAt(i) - skey - 65) % 26 + 65);
-        } 
-        else {
-            output += String.fromCharCode((ct.charCodeAt(i) - skey - 97) % 26 + 97);
+        // if(ct[i] === ct[i].toUpperCase()) {
+        //     doutput += String.fromCharCode((ct.charCodeAt(i) - dkey - 65) % 26 + 65);
+        // } 
+        // else {
+        //     doutput += String.fromCharCode((ct.charCodeAt(i) - dkey - 97) % 26 + 97);
+        // }
+        if(ct.charCodeAt(i) >= 97 && ct.charCodeAt(i) <= 122) {
+            doutput += String.fromCharCode((ct.charCodeAt(i) - 97 - dkey + 26) % 26 + 97);
+        } else if(ct.charCodeAt(i) >= 65 && ct.charCodeAt(i) <= 90) {
+            doutput += String.fromCharCode((ct.charCodeAt(i) - 65 - dkey + 26) % 26 + 65);
+        } else {
+            doutput += String.fromCharCode(ct.charCodeAt(i));
         }
     }
-    document.getElementById("textPlain").innerHTML = output;
+    document.getElementById("textPlain").innerHTML = doutput;
 }
 
 var input1 = document.getElementById("key")
